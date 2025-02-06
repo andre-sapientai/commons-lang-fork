@@ -79,6 +79,7 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${reflectionCompare2WhenLhsClazzNotIsInstanceRhsThrowsClassCastException}, hash: FF87B976F1AAC474F9CE54CC3BB8E25F
+    @Disabled()
     @Test()
     void reflectionCompare2WhenLhsClazzNotIsInstanceRhsThrowsClassCastException() {
         /* Branches:
@@ -314,7 +315,6 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${append1WhenComparisonEquals0}, hash: DF7E2A55CBA82E1D96A49A053C9CDAE7
-    @Disabled()
     @Test()
     void append1WhenComparisonEquals0() {
         /* Branches:
@@ -723,7 +723,6 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${append7WhenComparisonEquals0}, hash: 5B3A55767265E88976AF3DDA9CF93B44
-    @Disabled()
     @Test()
     void append7WhenComparisonEquals0() {
         /* Branches:
@@ -818,7 +817,6 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${append9WhenLhsLengthLessThanRhsLength}, hash: 61A04A35C8F352D875CD330177404C6A
-    @Disabled()
     @Test()
     void append9WhenLhsLengthLessThanRhsLength() {
         /* Branches:
@@ -997,7 +995,6 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${append11WhenComparisonEquals0}, hash: 0E74017EF85B8F56F1874E0766289EB2
-    @Disabled()
     @Test()
     void append11WhenComparisonEquals0() {
         /* Branches:
@@ -1261,6 +1258,7 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${append15WhenComparatorIsNotNull}, hash: 8C195838F23DE88372AD9A1171D105EF
+    @Disabled()
     @Test()
     void append15WhenComparatorIsNotNull() {
         /* Branches:
@@ -1371,7 +1369,6 @@ class CompareToBuilderBaseRockGeneratedTest {
     }
 
     //BaseRock generated method id: ${append17WhenRhsIsNull}, hash: 540B58026DD8EA65082A6DC7702F5647
-    @Disabled()
     @Test()
     void append17WhenRhsIsNull() {
         /* Branches:

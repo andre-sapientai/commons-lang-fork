@@ -351,15 +351,15 @@ public class EqualsBuilder implements Builder<Boolean> {
      */
     private boolean isEquals = true;
 
-    private boolean testTransients;
+    boolean testTransients;
 
-    private boolean testRecursive;
+    boolean testRecursive;
 
-    private List<Class<?>> bypassReflectionClasses;
+    List<Class<?>> bypassReflectionClasses;
 
-    private Class<?> reflectUpToClass;
+    Class<?> reflectUpToClass;
 
-    private String[] excludeFields;
+    String[] excludeFields;
 
     /**
      * Constructor for EqualsBuilder.

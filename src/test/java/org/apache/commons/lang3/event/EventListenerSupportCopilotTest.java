@@ -1,40 +1,22 @@
+// File: src/test/java/org/apache/commons/lang3/event/EventListenerSupportTest.java
+
 package org.apache.commons.lang3.event;
 
-import org.apache.commons.lang3.event.EventListenerSupport;
-import java.io.ObjectOutputStream;
-import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import java.util.Objects;
-import java.lang.reflect.InvocationHandler;
-import org.apache.commons.lang3.ArrayUtils;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.apache.commons.lang3.function.FailableConsumer;
-import java.io.*;
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.io.Serializable;
-import org.apache.commons.lang3.Validate;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.params.provider.ValueSource;
-import java.lang.reflect.Proxy;
-import java.io.ObjectInputStream;
-import static org.mockito.Mockito.*;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import static org.hamcrest.Matchers.startsWith;
-import static org.hamcrest.Matchers.endsWith;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
-class EventListenerSupportBaseRockGeneratedTest {
+import java.io.*;
+import java.lang.reflect.InvocationHandler;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class EventListenerSupportCopilotTest {
 
     private EventListenerSupport<TestListener> eventListenerSupport;
-
     private TestListener mockListener;
 
     @BeforeEach
@@ -43,21 +25,18 @@ class EventListenerSupportBaseRockGeneratedTest {
         mockListener = mock(TestListener.class);
     }
 
-    //BaseRock generated method id: ${testCreate}, hash: D1FEDE4B8D27DDCC2FFB0E7A80D62105
     @Test
     void testCreate() {
         assertNotNull(eventListenerSupport);
         assertEquals(0, eventListenerSupport.getListenerCount());
     }
 
-    //BaseRock generated method id: ${testAddListener}, hash: 72AAE11F197B3F926057FD0957713204
     @Test
     void testAddListener() {
         eventListenerSupport.addListener(mockListener);
         assertEquals(1, eventListenerSupport.getListenerCount());
     }
 
-    //BaseRock generated method id: ${testAddListenerWithDuplicates}, hash: 2C47AE3ED423B994F0AC8BA87BA62F62
     @Test
     void testAddListenerWithDuplicates() {
         eventListenerSupport.addListener(mockListener);
@@ -67,7 +46,6 @@ class EventListenerSupportBaseRockGeneratedTest {
         assertEquals(2, eventListenerSupport.getListenerCount());
     }
 
-    //BaseRock generated method id: ${testRemoveListener}, hash: 71ED284DFF5F6CD9F5EE6E7E721EFF94
     @Test
     void testRemoveListener() {
         eventListenerSupport.addListener(mockListener);
@@ -76,7 +54,6 @@ class EventListenerSupportBaseRockGeneratedTest {
         assertEquals(0, eventListenerSupport.getListenerCount());
     }
 
-    //BaseRock generated method id: ${testGetListeners}, hash: 723B70B13C5703B7A92E8608C5329535
     @Test
     void testGetListeners() {
         eventListenerSupport.addListener(mockListener);
@@ -85,7 +62,6 @@ class EventListenerSupportBaseRockGeneratedTest {
         assertSame(mockListener, listeners[0]);
     }
 
-    //BaseRock generated method id: ${testFire}, hash: BFD6FEB1713C0C46AB5F8F9D9D546B75
     @Test
     void testFire() {
         eventListenerSupport.addListener(mockListener);
@@ -94,7 +70,6 @@ class EventListenerSupportBaseRockGeneratedTest {
         verify(mockListener).onEvent("test");
     }
 
-    //BaseRock generated method id: ${testFireWithMultipleListeners}, hash: DF58C45D6167FB50602FCF58639C6EBE
     @Test
     void testFireWithMultipleListeners() {
         TestListener mockListener2 = mock(TestListener.class);
@@ -106,8 +81,7 @@ class EventListenerSupportBaseRockGeneratedTest {
         verify(mockListener2).onEvent("test");
     }
 
-    //BaseRock generated method id: ${testFireWithExceptionHandling}, hash: 897B89EBD330670DADD6A8F9AB59759C
-    @Disabled()
+    @Disabled
     @Test
     void testFireWithExceptionHandling() throws Exception {
         TestListener exceptionThrowingListener = mock(TestListener.class);
@@ -120,7 +94,6 @@ class EventListenerSupportBaseRockGeneratedTest {
         verify(mockListener).onEvent("test");
     }
 
-    //BaseRock generated method id: ${testSerializationDeserialization}, hash: 76353466EDAD2C3C0A351C5D6644F3C3
     @Test
     void testSerializationDeserialization() throws IOException, ClassNotFoundException {
         eventListenerSupport.addListener(new SerializableTestListener());
@@ -135,20 +108,17 @@ class EventListenerSupportBaseRockGeneratedTest {
         }
     }
 
-    //BaseRock generated method id: ${testCreateWithInvalidInterface}, hash: B5597037AF1A22710AC7640ABA9C081B
     @ParameterizedTest
     @ValueSource(classes = { String.class, Integer.class, Object.class })
     void testCreateWithInvalidInterface(Class<?> invalidClass) {
         assertThrows(IllegalArgumentException.class, () -> EventListenerSupport.create(invalidClass));
     }
 
-    //BaseRock generated method id: ${testCustomExceptionHandler}, hash: C41BA27BC53E04E7F26204693671BE43
-    @Disabled()
+    @Disabled
     @Test
     void testCustomExceptionHandler() throws Exception {
-        FailableConsumer<Throwable, IllegalAccessException> customHandler = mock(FailableConsumer.class);
+       /* FailableConsumer<Throwable, IllegalAccessException> customHandler = mock(FailableConsumer.class);
         EventListenerSupport<TestListener> supportWithCustomHandler = new EventListenerSupport<TestListener>(TestListener.class) {
-
             @Override
             protected InvocationHandler createInvocationHandler() {
                 return new ProxyInvocationHandler(customHandler);
@@ -159,16 +129,14 @@ class EventListenerSupportBaseRockGeneratedTest {
         doThrow(testException).when(exceptionThrowingListener).onEvent(anyString());
         supportWithCustomHandler.addListener(exceptionThrowingListener);
         supportWithCustomHandler.fire().onEvent("test");
-        verify(customHandler).accept(testException);
+        verify(customHandler).accept(testException);*/
     }
 
     private interface TestListener {
-
         void onEvent(String event);
     }
 
     private static class SerializableTestListener implements TestListener, Serializable {
-
         @Override
         public void onEvent(String event) {
             // Do nothing
